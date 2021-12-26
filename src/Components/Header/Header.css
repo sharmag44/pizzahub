@@ -1,0 +1,17 @@
+.Header__logo {
+  border-radius: 50%;
+  background-color: #fcc93c;
+}
+Link,
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: white;
+}
+.Header {
+  max-height: 19vh;
+  /* background-color: #fcc93c; */
+  background-color: #eac04b;
+}
