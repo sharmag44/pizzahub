@@ -20,7 +20,7 @@ export default function Header() {
                 className="d-inline-block p-1  ml-2 Header__logo"
               />
             </Link>
-            <h3 className="display-6 d-inline-block fw-bold fst-italic">
+            <h3 className="display-6 d-inline-block fw-bold fst-italic Header_tag">
               <Link to="/">PizzaHub</Link>
             </h3>
           </a>

@@ -1,9 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState, useContext } from "react";
+//import Cart from "../Cart/Cart";
+import Swal from "sweetalert2";
+//import Swal from "sweetalert2/dist/sweetalert2.js";
+import { useState } from "react";
 const Card = (props) => {
-  const [name, setName] = useState("");
-  const pizzaName = useContext(name);
+  const [name, setName] = useState({ name: "" });
+  const handleClick = () => {
+    Swal.fire({
+      title: "Alert!",
+      text: `${props.name} Added to Cart`,
+      icon: "success",
+      confirmButtonText: "Ok",
+    });
+    setName((preValue) => {
+      return { ...preValue, name: props.name };
+    });
+  };
   console.log(name);
+
   return (
     <div className="Card">
       <div class="card" style={{ width: "22rem", marginBottom: "20px" }}>
@@ -18,14 +32,15 @@ const Card = (props) => {
           <p class="card-text text-center">Price :{props.detail} ₹</p>
           <button
             className="btn btn-primary btn-lg w-100"
-            onClick={() => {
-              setName(props.name);
-            }}
+            onClick={handleClick}
           >
             Add to Cart
           </button>
         </div>
       </div>
+      {/* <span style={{ display: "hidden" }}>
+        <Cart name={name} />
+      </span> */}
     </div>
   );
 };
