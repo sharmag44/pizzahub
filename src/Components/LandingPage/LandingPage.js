@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./LandingPage.css";
 import { Carousel } from "react-bootstrap";
 import Imag1 from "../../image/image1.png";
+import "./LandingPage.css"
 const LandingPage = () => {
   return (
     <div className="LandingPage">
