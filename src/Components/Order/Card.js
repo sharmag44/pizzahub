@@ -11,9 +11,9 @@ const Card = (props) => {
       text: `${props.name} Added to Cart`,
       icon: "success",
       confirmButtonText: "Ok",
-    });
-    setName((preValue) => {
-      return { ...preValue, name: props.name };
+      customClass: {
+        confirmButton: 'btn-blue'
+      }
     });
   };
   console.log(name);
