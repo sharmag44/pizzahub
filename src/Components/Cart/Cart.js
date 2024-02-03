@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Cart.css";
-import { addToCart } from "../../Store/AddToStore"
+import Store from "../../Store/AddToStore"
 export default function Cart({ name }) {
   return (
     <div className="Cart">
@@ -22,7 +22,7 @@ export default function Cart({ name }) {
               <td>Pizza</td>
               <td>dksldlskldks</td>
               <td>100</td>
-              <td>{addToCart.items}</td>
+              <td>{Store}</td>
             </tr>
           </tbody>
         </table>

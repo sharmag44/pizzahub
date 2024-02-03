@@ -6,7 +6,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import { red, blue } from "@mui/material/colors";
 const Footer = () => {
   return (
-    <div className="Footer d-flex flex-row justify-content-center align-items-center gap-3">
+    <div className="Footer d-flex flex-row justify-content-center align-items-center gap-3 h-10">
       <FacebookIcon fontSize="large" sx={{ color: blue[900] }} />
       <TwitterIcon fontSize="large" color="primary" />
       <YouTubeIcon fontSize="large" sx={{ color: red[500] }} />

@@ -27,7 +27,7 @@ function App() {
           element={
             <div>
               <Cart />
-              {/* <Footer /> */}
+              <Footer />
             </div>
           }
         />
