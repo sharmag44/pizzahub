@@ -1,9 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import Store from "../../Store/AddToStore.js"
+import Store from "../../Store/AddToStore.js";
+
 const Card = (props) => {
     const [product, setProduct] = useState({});
+    const { addItem } = Store()
     const handleClick = () => {
         Swal.fire({
             title: "Added to Cart!",
@@ -11,8 +13,8 @@ const Card = (props) => {
             icon: "success",
             confirmButtonText: "Ok",
         });
-        Store.getInitialState(props);
-        setProduct({ name: props.name, img: props.img, price: props.price });
+        addItem(props);
+        setProduct({ key: props.key, name: props.name, img: props.img, price: props.price });
         console.log(product)
     };
 

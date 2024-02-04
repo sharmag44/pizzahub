@@ -8,8 +8,8 @@ const Order = () => {
       <h3 className="Order__menu">Menu</h3>
       <div className="container">
         <div className="row">
-          {menuItems.map((item, index) =>
-            <Card key={index} name={item.name} price={item.price} img={item.img} />)
+          {menuItems.map((item) =>
+            <Card key={item.name} id={item.name} name={item.name} price={item.price} img={item.img} />)
           }
         </div>
       </div>

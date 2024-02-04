@@ -2,7 +2,16 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Cart.css";
 import Store from "../../Store/AddToStore"
-export default function Cart({ name }) {
+export default function Cart() {
+  const { items, removeItem } = Store((state) => ({
+    items: state.items,
+    removeItem: state.removeItem,
+  }));
+
+  const handleRemoveItem = (itemId) => {
+    removeItem(itemId);
+  };
+
   return (
     <div className="Cart">
       <div className="Cart__list">
@@ -13,17 +22,19 @@ export default function Cart({ name }) {
               <th scope="col">#</th>
               <th scope="col">Name</th>
               <th scope="col">Image</th>
+              <th scope="col">Quantity</th>
               <th scope="col">Price</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Pizza</td>
-              <td>dksldlskldks</td>
-              <td>100</td>
-              <td>{Store}</td>
-            </tr>
+            {items.map((item, index) => <tr>
+              <th scope="row">{index + 1}</th>
+              <td><img src={item.img} alt={item.img} /></td>
+              <td>{item.quantity || 1}</td>
+              <td>{item.image}</td>
+              <td>{item.price}</td>
+              <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
+            </tr>)}
           </tbody>
         </table>
       </div>
